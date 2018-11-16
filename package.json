@@ -1,0 +1,19 @@
+{
+  "name": "swagger-mock-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:acro5piano/swagger-mock-server",
+  "author": "gosho-kazuya <ketsume0211@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "casual": "^1.5.19",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.6",
+    "prettier": "^1.15.2"
+  }
+}
