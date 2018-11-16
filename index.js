@@ -1,4 +1,5 @@
 const express = require('express')
+const faker = require('faker')
 const swagger = require('./swagger')
 
 const definitions = {}
@@ -10,11 +11,11 @@ Object.keys(swagger.definitions).forEach(def => {
 const getMock = type => {
   switch (type) {
     case 'string':
-      return 'hello'
+      return faker.lorem.text().slice(0, 20)
     case 'integer':
-      return 123
+      return faker.random.number(500)
     case 'boolean':
-      return false
+      return faker.random.boolean()
   }
 }
 

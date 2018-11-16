@@ -9,8 +9,8 @@
     "dev": "nodemon index.js"
   },
   "dependencies": {
-    "casual": "^1.5.19",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "faker": "^4.1.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.6",
