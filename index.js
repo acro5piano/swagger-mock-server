@@ -93,7 +93,7 @@ async function start(path) {
     if (code.schema) {
       const def = refToDef(code.schema.$ref)
       const response = expandedDef[def]
-      app.use(path, json(response))
+      app.use(path.replace(/\{(.+?)\}/, ':$1'), json(response))
     }
   })
 
