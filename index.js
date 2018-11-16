@@ -2,6 +2,7 @@ const express = require('express')
 const faker = require('faker')
 const axios = require('axios')
 const fs = require('fs')
+const logger = require('morgan')
 
 const getMock = type => {
   switch (type) {
@@ -12,6 +13,21 @@ const getMock = type => {
     case 'boolean':
       return faker.random.boolean()
   }
+}
+
+const corsMiddleware = (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept, Authorization',
+  )
+  res.header('Access-Control-Allow-Methods', 'PUT, PATCH, POST, GET, DELETE, OPTIONS')
+
+  if (req.method === 'OPTIONS') {
+    res.sendStatus(200)
+  }
+
+  next()
 }
 
 const refToDef = ref => ref.split('/').slice(-1)[0]
@@ -64,6 +80,9 @@ async function start(path) {
   }
 
   const app = express()
+
+  app.use(corsMiddleware)
+  app.use(logger('dev'))
 
   const { paths } = swagger
 
