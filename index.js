@@ -1,6 +1,5 @@
 const express = require('express')
 const faker = require('faker')
-const swagger = require('./swagger')
 const axios = require('axios')
 const fs = require('fs')
 
@@ -31,7 +30,7 @@ const getSwagger = async path =>
   })
 
 async function start() {
-  const swaggerPath = await getSwagger(process.argv[2])
+  const swagger = await getSwagger(process.argv[2])
 
   const definitions = {}
   Object.keys(swagger.definitions).forEach(def => {
@@ -83,4 +82,4 @@ async function start() {
   app.listen(port, () => console.log(`mock server listen to http://localhost:${port}`))
 }
 
-start()
+module.exports = start

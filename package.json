@@ -1,12 +1,15 @@
 {
   "name": "yasocks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "repository": "git@github.com:acro5piano/swagger-mock-server",
   "author": "gosho-kazuya <ketsume0211@gmail.com>",
   "license": "MIT",
+  "bin": {
+    "yasocks": "index.js"
+  },
   "scripts": {
-    "dev": "nodemon index.js swagger.json"
+    "dev": "nodemon bin/yasocks swagger.json"
   },
   "dependencies": {
     "axios": "^0.18.0",
