@@ -6,7 +6,7 @@
   "author": "gosho-kazuya <ketsume0211@gmail.com>",
   "license": "MIT",
   "bin": {
-    "yasocks": "index.js"
+    "yasocks": "bin/yasocks.js"
   },
   "scripts": {
     "dev": "nodemon bin/yasocks swagger.json"
