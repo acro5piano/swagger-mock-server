@@ -2,7 +2,9 @@
 
 'use strict'
 
-if (!process.argv[2]) {
+const path = process.argv[2]
+
+if (!path) {
   console.log('Fatal: no swagger file given')
   console.log()
   console.log('Usage:')
@@ -11,4 +13,5 @@ if (!process.argv[2]) {
   process.exit(1)
 }
 
-require('../')()
+const yasocks = require('../')
+yasocks(path)

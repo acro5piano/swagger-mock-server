@@ -29,8 +29,8 @@ const getSwagger = async path =>
     })
   })
 
-async function start() {
-  const swagger = await getSwagger(process.argv[2])
+async function start(path) {
+  const swagger = await getSwagger(path)
 
   const definitions = {}
   Object.keys(swagger.definitions).forEach(def => {
@@ -79,7 +79,9 @@ async function start() {
   })
 
   const port = process.env.PORT || 7205
-  app.listen(port, () => console.log(`mock server listen to http://localhost:${port}`))
+  app.listen(port, () =>
+    console.log(`[yasocks] swgger mock server is listenning to http://localhost:${port}`),
+  )
 }
 
 module.exports = start
