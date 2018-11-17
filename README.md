@@ -16,6 +16,12 @@ Usage:
        yasocks http://example.com/swagger.json
 ```
 
+# Configuration
+
+```
+PORT=8000 yasocks /path/to/swagger.json
+```
+
 # Programmatic use
 
 ```js
